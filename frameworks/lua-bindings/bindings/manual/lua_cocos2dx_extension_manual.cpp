@@ -955,10 +955,7 @@ static int lua_cocos2dx_AssetsManager_setDelegate(lua_State* L)
             delegate = new LuaAssetsManagerDelegateProtocol();
             if (nullptr == delegate)
                 return 0;
-            
-            self->setUserObject(delegate);
             self->setDelegate(delegate);
-            delegate->release();
         }
         
         LUA_FUNCTION handler = toluafix_ref_function(L, 2, 0);
